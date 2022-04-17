@@ -1,28 +1,30 @@
 import React from "react";
 import './Header.css'
-import PersonIcon from '@mui/icons-material/Person';
-import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
+import InfoIcon from '@mui/icons-material/Info';
+import logo from './Untitled_Artwork.png';
 import { IconButton } from "@mui/material";
 import { Link } from 'react-router-dom';
 
 function Header(){
     return (
         <div className="header">
+            <Link to='/info'>
             <IconButton>
-            <PersonIcon className="header__icon" fontSize="large"/>
+            <InfoIcon className="header__icon" fontSize="large"/>
             </IconButton>
+            </Link>
             
             <Link to='/'>
             <img
             className="header__logo" 
-            src="https://cdn.worldvectorlogo.com/logos/bumble-1.svg" 
+            src={logo} 
             alt="bumble logo"
             />
             </Link>
 
-            <Link to='/chat'>
+            <Link to='/info'>
             <IconButton>
-            <ChatBubbleIcon className="header__icon" fontSize="large"/>
+            <InfoIcon className="header__icon" fontSize="large"/>
             </IconButton>
             </Link>
         </div>
