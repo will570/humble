@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
 .popUp{
     position: absolute;
     top: 0;
@@ -21,4 +22,6 @@
     align-items: center;
     object-fit: contain;
     justify-content: center;
+
+    font-family: 'Comfortaa';
 }

@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
 .card{
     position: relative;
-    width: 650px;
+    width: 400px;
     padding: 20px;
     max-width: 85vw;
-    height: 55vh;
+    height: 75vh;
     border-radius: 20px;
     background-size: cover;
     background-position: center;
@@ -30,6 +31,14 @@
     position: fixed;
     bottom: 10vh;
     display: flex;
+    margin: auto;
     width: 100%;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    color:#fefefe;
+    font-family: 'Comfortaa';
+}
+
+.popUpsContainer{
+    position: flex;
+    color: white;
 }

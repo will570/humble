@@ -25,7 +25,8 @@ const swipeL ={
     16: 'https://firebasestorage.googleapis.com/v0/b/humble-2b891.appspot.com/o/1Lconfidence.mp3?alt=media&token=6f4a5981-5a0f-49a6-b491-4b042fed903c',
     17: 'https://firebasestorage.googleapis.com/v0/b/humble-2b891.appspot.com/o/1LThat_right_french.mp3?alt=media&token=ceda98bd-c98d-4f19-bcfe-75c0e9d7778e',
     18: 'https://firebasestorage.googleapis.com/v0/b/humble-2b891.appspot.com/o/Lyessir%20Sound%20Effect.mp3?alt=media&token=892a274a-9b4c-4d88-9539-d08fffe4b3f0',
-    19: 'https://firebasestorage.googleapis.com/v0/b/humble-2b891.appspot.com/o/L-sheesh.mp3?alt=media&token=d1210361-83d9-4c0a-9c7d-8250f99791e6'
+    19: 'https://firebasestorage.googleapis.com/v0/b/humble-2b891.appspot.com/o/L-sheesh.mp3?alt=media&token=d1210361-83d9-4c0a-9c7d-8250f99791e6',
+    20: 'https://firebasestorage.googleapis.com/v0/b/humble-2b891.appspot.com/o/twinkle.mp3?alt=media&token=e3245876-071b-4872-a49d-3b0c1d681529'
 }
 
 const swipeR = {
@@ -69,13 +70,6 @@ function TinderCards(){
     let timer = null;
 
     const onSwipe = (direction) => {
-        if (direction == 'left' || direction == 'right' )
-        {
-            clearInterval(timer)
-            setmessagePopUp(true)
-            setdirection(direction)
-            timer = setInterval(()=> {setmessagePopUp(false)}, 3000)
-        }
         if (direction == 'right'){
             var numR = getRandomInt(14);
             switch (numR){
@@ -90,13 +84,16 @@ function TinderCards(){
                 case 13:
                     textNum = 6;
                     break;
+                default:
+                    textNum = -1;
+                    break;
             }
             var audioR = new Audio(swipeR[numR]);
             audioR.play();
             setCountR((prevR) => prevR + 1);
         }
         else if (direction == 'left'){
-            var numL = getRandomInt(20);
+            var numL = getRandomInt(21);
             switch (numL){
                 case 14:
                     textNum = 1;
@@ -111,10 +108,19 @@ function TinderCards(){
                 case 10:
                     textNum = 4;
                     break;
+                default:
+                    textNum = -1;
+                    break;
             }
             var audioL = new Audio(swipeL[numL]);
             audioL.play();
             setCountL((prevL) => prevL + 1);
+        }
+        if (direction == 'left' || direction == 'right' ){
+            clearInterval(timer)
+            setmessagePopUp(true)
+            setdirection(direction)
+            timer = setInterval(()=> {setmessagePopUp(false)}, 2500)
         }
     }
 
@@ -149,20 +155,25 @@ function TinderCards(){
             </div>
 
             <div className = 'popUpsContainer'>
-            {swipeDirection == 'left' &&
-                <PopUp trigger = {messagePopUp} setTrigger  = {setmessagePopUp} id = "popUp">
+                {swipeDirection == 'left' &&
+                    <PopUp trigger = {messagePopUp} setTrigger  = {setmessagePopUp} id = "popUp">
+                        {textNum != -1 ?
+                        <img src={text[textNum]} />
+                        :
+                        <p>u swiped left. good, good</p>
+                        }
+                    </PopUp>
+                }
+                {swipeDirection == 'right' &&
+                    <PopUp trigger = {messagePopUp} setTrigger  = {setmessagePopUp} id = "popUp">
+                        {textNum != -1 ?
+                        <img src={text[textNum]} />
+                        :
+                        <p>how dare u swipe right???</p>
 
-                <p>swipe left, good</p>
-                </PopUp>
-            }
-            {swipeDirection == 'right' &&
-                <PopUp trigger = {messagePopUp} setTrigger  = {setmessagePopUp} id = "popUp">
-                    {textNum != -1 &&
-                    <img src={text[textNum]} />
-                    }
-                <p>how dare u swipe right??</p>
-                </PopUp>
-            }
+                        }
+                    </PopUp>
+                }
             </div>
 
             <div className="main_column" key="countText">
