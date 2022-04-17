@@ -1,8 +1,13 @@
+:root{
+    --themecolor: rgb(118, 94, 171);
+    --textcolor: fefefe;
+
+}
 .header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(118, 94, 171);
+    background-color: var(--themecolor);
 }
 
 .header__logo{

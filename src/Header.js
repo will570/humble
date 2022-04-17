@@ -1,18 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import './Header.css'
-import InfoIcon from '@mui/icons-material/Info';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import logo from './Untitled_Artwork.png';
 import { IconButton } from "@mui/material";
+import Brightness6Icon from '@mui/icons-material/Brightness6';
 import { Link } from 'react-router-dom';
 
 function Header(){
+    let theme = "day";
+
     return (
         <div className="header">
-            <Link to='/info'>
-            <IconButton>
-            <InfoIcon className="header__icon" fontSize="large"/>
+            <IconButton onClick={function() {
+                theme = theme == "day" ? "night" : "day";
+                document.documentElement.style.setProperty("--themecolor", theme=="day" ? "rgb(41, 27, 72)" : "rgb(118, 94, 171)");
+            }}>
+            <Brightness6Icon className="header__icon" fontSize="large"/>
             </IconButton>
-            </Link>
             
             <Link to='/'>
             <img
@@ -24,7 +28,7 @@ function Header(){
 
             <Link to='/info'>
             <IconButton>
-            <InfoIcon className="header__icon" fontSize="large"/>
+            <PlayArrowIcon className="header__icon" fontSize="large"/>
             </IconButton>
             </Link>
         </div>
