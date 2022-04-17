@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/humble/static/css/main.d68ef265.css",
-    "main.js": "/humble/static/js/main.cacdcca7.js",
+    "main.js": "/humble/static/js/main.bd9f2f67.js",
     "static/js/787.3b17e781.chunk.js": "/humble/static/js/787.3b17e781.chunk.js",
     "static/media/Untitled_Artwork.png": "/humble/static/media/Untitled_Artwork.2c0f07573991afac4fd6.png",
     "index.html": "/humble/index.html",
     "main.d68ef265.css.map": "/humble/static/css/main.d68ef265.css.map",
-    "main.cacdcca7.js.map": "/humble/static/js/main.cacdcca7.js.map",
+    "main.bd9f2f67.js.map": "/humble/static/js/main.bd9f2f67.js.map",
     "787.3b17e781.chunk.js.map": "/humble/static/js/787.3b17e781.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d68ef265.css",
-    "static/js/main.cacdcca7.js"
+    "static/js/main.bd9f2f67.js"
   ]
 }
